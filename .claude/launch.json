@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "moonlight-library",
+      "runtimeExecutable": "py",
+      "runtimeArgs": ["-m", "http.server", "8000", "--directory", "C:/Users/hyuncheol.jeon/Downloads/moonlight-library-main/moonlight-library-main"],
+      "port": 8000
+    }
+  ]
+}
