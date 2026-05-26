@@ -1,0 +1,58 @@
+{
+  "style": "soft watercolor children's storybook illustration",
+  "palette": "warm golden yellow, soft rose pink, sage forest green, lavender, warm chestnut brown, cream white",
+  "mood": "magical fairy tale, warm and tender, gentle sunlight through forest trees, cozy and wonder-filled",
+  "style_suffix": "soft watercolor children's storybook illustration, warm fairy tale palette of golden yellow rose pink sage green lavender and chestnut brown, gentle round shapes, magical and cozy atmosphere, painterly soft edges with subtle texture, storybook fairy tale composition, no text no letters no watermark no signature",
+  "characters": {
+    "yeonwoo": "8-year-old Korean girl named Yeonwoo, very long flowing warm chestnut-brown magical hair reaching to the ground, wearing a light pink dress with small pink flower embroidery, gentle warm smile, large round eyes, in a tall round stone tower",
+    "yeonah": "5-year-old Korean girl named Yeonah, short black hair in two small pigtails tied with red ribbons, wearing a red dress with small white star pattern, rosy chubby cheeks, bright wide curious eyes, cheerful energetic expression"
+  },
+  "setting": "tall round stone fairy tale tower surrounded by enchanted forest with golden sunlight",
+  "images": [
+    {
+      "filename": "cover.png",
+      "scene": "cover",
+      "prompt": "A tall magical stone tower rising above an enchanted forest, a young Korean girl (Yeonwoo) with incredibly long flowing warm chestnut-brown magical hair visible at the high tower window, her hair cascading down the stone wall like a waterfall, a smaller Korean girl (Yeonah) in a red star-patterned dress standing below the tower looking up with wonder and delight, golden magical sunlight streaming through tall ancient trees, glowing fireflies in the air, warm fairy tale atmosphere, front view composition showing both girls and full tower height, soft watercolor children's storybook illustration, warm fairy tale palette of golden yellow rose pink sage green lavender and chestnut brown, gentle round shapes, magical and cozy atmosphere, painterly soft edges with subtle texture, storybook fairy tale composition, no text no letters no watermark no signature"
+    },
+    {
+      "filename": "scene_01.png",
+      "scene": "scene 1 - Yeonwoo in the tower",
+      "prompt": "A young 8-year-old Korean girl (Yeonwoo) sitting at the wide arched window of a tall stone tower, brushing her incredibly long warm chestnut-brown magical hair that flows past the window sill toward the floor, wearing a light pink dress with flower embroidery, gentle wistful smile, morning golden sunlight streaming through the window, enchanted forest visible far below, cozy tower interior with simple wooden furniture and small colorful flowers in a vase, bird singing outside, soft watercolor children's storybook illustration, warm fairy tale palette of golden yellow rose pink sage green lavender and chestnut brown, gentle round shapes, magical and cozy atmosphere, painterly soft edges with subtle texture, storybook fairy tale composition, no text no letters no watermark no signature"
+    },
+    {
+      "filename": "scene_02.png",
+      "scene": "scene 2 - Yeonah discovers the tower",
+      "prompt": "A curious 5-year-old Korean girl (Yeonah) in a red star-patterned dress, standing on tiptoe in a magical green forest, parting leafy branches with small hands to peek through, eyes wide with excitement and wonder as she spots a tall stone tower in the distance through the trees, dappled morning sunlight filtering through forest canopy, mushrooms and wildflowers on the forest floor, soft watercolor children's storybook illustration, warm fairy tale palette of golden yellow rose pink sage green lavender and chestnut brown, gentle round shapes, magical and cozy atmosphere, painterly soft edges with subtle texture, storybook fairy tale composition, no text no letters no watermark no signature"
+    },
+    {
+      "filename": "scene_03.png",
+      "scene": "scene 3 - Yeonah calls up",
+      "prompt": "A small 5-year-old Korean girl (Yeonah) in a red star-patterned dress standing at the base of a very tall stone tower, cupping both hands around her mouth calling upward with all her might, cheeks puffed, her face tilted up with determination, far above at the tower window a young Korean girl (Yeonwoo) peeks down with a surprised happy expression, tall tower with ivy and small wildflowers at the base, warm afternoon golden light, soft watercolor children's storybook illustration, warm fairy tale palette of golden yellow rose pink sage green lavender and chestnut brown, gentle round shapes, magical and cozy atmosphere, painterly soft edges with subtle texture, storybook fairy tale composition, no text no letters no watermark no signature"
+    },
+    {
+      "filename": "scene_04.png",
+      "scene": "scene 4 - The magical hair comes down",
+      "prompt": "A young Korean girl (Yeonwoo) in a pink flower dress leaning out of a high stone tower window with a bright smile, her incredibly long magical warm chestnut-brown hair flowing down the full length of the stone tower wall like a shimmering rope all the way to the ground, hair glowing softly with a gentle golden magical shimmer, enchanted forest in background, warm sunlight, a small girl below reaching up toward the hair ends, soft watercolor children's storybook illustration, warm fairy tale palette of golden yellow rose pink sage green lavender and chestnut brown, gentle round shapes, magical and cozy atmosphere, painterly soft edges with subtle texture, storybook fairy tale composition, no text no letters no watermark no signature"
+    },
+    {
+      "filename": "scene_05.png",
+      "scene": "scene 5 - Yeonah climbs up",
+      "prompt": "A 5-year-old Korean girl (Yeonah) in a red star-patterned dress climbing up the side of a tall stone tower by gripping long warm chestnut-brown magical hair like a rope, feet braced against the stone wall, determined and happy face looking upward, red dress and pigtails fluttering in the breeze, high above the tree canopy, golden afternoon light, the tower window with Yeonwoo watching and cheering, exciting adventurous composition, soft watercolor children's storybook illustration, warm fairy tale palette of golden yellow rose pink sage green lavender and chestnut brown, gentle round shapes, magical and cozy atmosphere, painterly soft edges with subtle texture, storybook fairy tale composition, no text no letters no watermark no signature"
+    },
+    {
+      "filename": "scene_06.png",
+      "scene": "scene 6 - Playing together at the top",
+      "prompt": "Two Korean girls playing joyfully together inside a cozy round stone tower room, the older girl (Yeonwoo, 8 years old, pink flower dress, long chestnut hair in braids) and younger girl (Yeonah, 5 years old, red star dress, pigtails), both wearing flower crowns on their heads, drawing pictures together on paper spread on the floor, colorful crayons and flowers around them, warm golden afternoon light through the arched window showing forest view and sunset sky, both girls laughing happily, magical cozy atmosphere, soft watercolor children's storybook illustration, warm fairy tale palette of golden yellow rose pink sage green lavender and chestnut brown, gentle round shapes, magical and cozy atmosphere, painterly soft edges with subtle texture, storybook fairy tale composition, no text no letters no watermark no signature"
+    },
+    {
+      "filename": "scene_07.png",
+      "scene": "scene 7 - Yeonah slides down at sunset",
+      "prompt": "A small 5-year-old Korean girl (Yeonah) in a red star dress sliding down from a tall stone tower window, holding and sliding along the long warm chestnut-brown magical hair like a fireman's pole or slide, a joyful surprised expression, golden-orange sunset sky behind the tower silhouette, warm glowing light bathing the scene, forest below in warm amber tones, Yeonwoo watching from the window above with a warm smile, magical golden light, soft watercolor children's storybook illustration, warm fairy tale palette of golden yellow rose pink sage green lavender and chestnut brown, gentle round shapes, magical and cozy atmosphere, painterly soft edges with subtle texture, storybook fairy tale composition, no text no letters no watermark no signature"
+    },
+    {
+      "filename": "scene_08.png",
+      "scene": "scene 8 - See you tomorrow!",
+      "prompt": "A heartwarming farewell scene: a young Korean girl (Yeonwoo) in a pink dress leaning out of a glowing tower window high up, waving both hands enthusiastically with a big smile, and below on the ground a small Korean girl (Yeonah) in red star dress looking up and waving back with both arms raised high, happy and warm expressions, enchanted forest at blue-hour dusk with the tower windows glowing warmly like lanterns, fireflies beginning to appear, magical warm twilight atmosphere, a feeling of friendship and joy, soft watercolor children's storybook illustration, warm fairy tale palette of golden yellow rose pink sage green lavender and chestnut brown, gentle round shapes, magical and cozy atmosphere, painterly soft edges with subtle texture, storybook fairy tale composition, no text no letters no watermark no signature"
+    }
+  ]
+}

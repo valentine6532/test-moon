@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연우의 마법 머리카락</title>
+  <meta id="meta-title" name="title" content="연우의 마법 머리카락">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars-bg"></div>
+
+  <header class="topbar">
+    <div class="book-meta">
+      <a href="../../" class="back-link">← 도서관</a>
+      <span id="meta-title">연우의 마법 머리카락</span>
+    </div>
+    <div class="top-actions">
+      <button class="ghost-btn" id="restart-btn" title="처음으로">↩</button>
+      <button class="ghost-btn" id="fullscreen-btn" title="전체화면">⛶</button>
+    </div>
+  </header>
+
+  <main class="book" id="book" tabindex="0" aria-label="그림책 뷰어">
+    <div class="page-track" id="page-track"></div>
+    <button class="edge-nav left" id="edge-prev" aria-label="이전 페이지"></button>
+    <button class="edge-nav right" id="edge-next" aria-label="다음 페이지"></button>
+  </main>
+
+  <nav class="controls" aria-label="페이지 탐색">
+    <button class="nav-btn" id="prev">◀ 이전</button>
+    <div class="indicator-wrap">
+      <span id="indicator">1 / 10</span>
+      <div class="dots" id="dots"></div>
+    </div>
+    <button class="nav-btn" id="next">다음 ▶</button>
+  </nav>
+
+  <script src="book.js"></script>
+</body>
+</html>
