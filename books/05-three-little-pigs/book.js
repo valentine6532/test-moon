@@ -40,6 +40,66 @@
   audioEl.preload = 'auto';
   let isMuted = false;
 
+  // 자동 넘김
+  let isAutoTurn = false;
+  let mutedDelay = 5;
+  let autoTimer = null;
+
+  function clearAutoTimer() {
+    if (autoTimer) { clearTimeout(autoTimer); autoTimer = null; }
+    stopProgressBar();
+  }
+
+  function startProgressBar(durationMs) {
+    const bar = document.getElementById('auto-progress');
+    if (!bar) return;
+    bar.style.transition = 'none';
+    bar.style.width = '100%';
+    void bar.offsetWidth;
+    bar.style.transition = `width ${durationMs}ms linear`;
+    bar.style.width = '0%';
+  }
+
+  function stopProgressBar() {
+    const bar = document.getElementById('auto-progress');
+    if (!bar) return;
+    bar.style.transition = 'none';
+    bar.style.width = '0%';
+  }
+
+  function scheduleAutoTurn() {
+    clearAutoTimer();
+    if (!isAutoTurn) return;
+    if (currentIdx >= data.pages.length - 1) return;
+    const page = data.pages[currentIdx];
+    if (!isMuted && page.audio) return; // audio ended 이벤트가 처리
+    const delay = mutedDelay * 1000;
+    startProgressBar(delay);
+    autoTimer = setTimeout(() => { clearAutoTimer(); goTo(currentIdx + 1); }, delay);
+  }
+
+  audioEl.addEventListener('ended', () => {
+    if (!isAutoTurn || isMuted) return;
+    if (currentIdx >= data.pages.length - 1) return;
+    startProgressBar(1000);
+    autoTimer = setTimeout(() => { clearAutoTimer(); goTo(currentIdx + 1); }, 1000);
+  });
+
+  function updateAutoBtn() {
+    const btn = document.getElementById('auto-btn');
+    const picker = document.getElementById('delay-picker');
+    if (!btn || !picker) return;
+    if (isAutoTurn) {
+      btn.classList.add('active-gold');
+      btn.title = '자동 넘김 끄기';
+      picker.classList.add('visible');
+    } else {
+      btn.classList.remove('active-gold');
+      btn.title = '자동 넘김 켜기';
+      picker.classList.remove('visible');
+    }
+  }
+
   function playPageAudio(idx) {
     const p = data.pages[idx];
     audioEl.pause();
@@ -160,6 +220,7 @@
     if (isAnimating) return;
     if (idx < 0 || idx >= data.pages.length) return;
     if (idx === currentIdx) return;
+    clearAutoTimer();
     const goingForward = idx > currentIdx;
     const oldIdx = currentIdx;
     isAnimating = true;
@@ -188,6 +249,7 @@
     }
 
     playPageAudio(idx);
+    scheduleAutoTurn();
 
     setTimeout(() => {
       pageEls[oldIdx].classList.remove('leaving');
@@ -213,8 +275,29 @@
         isMuted = !isMuted;
         audioEl.muted = isMuted;
         updateMuteBtn();
+        // 음소거 전환 시 자동넘김 재스케줄
+        scheduleAutoTurn();
       });
     }
+
+    const autoBtn = document.getElementById('auto-btn');
+    if (autoBtn) {
+      autoBtn.addEventListener('click', () => {
+        isAutoTurn = !isAutoTurn;
+        updateAutoBtn();
+        if (isAutoTurn) scheduleAutoTurn();
+        else clearAutoTimer();
+      });
+    }
+
+    document.querySelectorAll('.delay-opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        mutedDelay = Number(btn.dataset.delay);
+        document.querySelectorAll('.delay-opt').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (isAutoTurn) scheduleAutoTurn();
+      });
+    });
 
     fullscreenBtn.addEventListener('click', () => {
       const doc = document;

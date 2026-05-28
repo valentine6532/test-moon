@@ -95,7 +95,7 @@ html, body {
   background: rgba(232, 160, 180, 0.08);
   border-color: rgba(232, 160, 180, 0.4);
 }
-.top-actions { display: flex; gap: 8px; }
+.top-actions { display: flex; align-items: center; gap: 8px; }
 .ghost-btn {
   background: transparent; border: 1px solid rgba(255, 255, 255, 0.18);
   color: var(--ink-soft);
@@ -104,6 +104,46 @@ html, body {
   transition: all 0.2s var(--transition);
 }
 .ghost-btn:hover { background: rgba(255, 255, 255, 0.08); color: var(--ink); border-color: rgba(255, 255, 255, 0.35); }
+.ghost-btn.active-gold {
+  color: var(--gold);
+  border-color: rgba(245, 200, 66, 0.55);
+  background: rgba(245, 200, 66, 0.1);
+}
+
+/* 자동 넘김 */
+.auto-turn-wrap { display: flex; align-items: center; gap: 6px; }
+.delay-picker { display: none; align-items: center; gap: 4px; }
+.delay-picker.visible { display: flex; }
+.delay-opt {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--ink-soft);
+  padding: 4px 9px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: var(--sans);
+  transition: all 0.2s;
+  line-height: 1;
+}
+.delay-opt:hover { background: rgba(255, 255, 255, 0.08); color: var(--ink); }
+.delay-opt.active {
+  background: rgba(245, 200, 66, 0.15);
+  border-color: rgba(245, 200, 66, 0.6);
+  color: var(--gold);
+}
+
+/* 자동 넘김 진행 바 */
+.auto-progress {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--rose), var(--gold));
+  border-radius: 0 0 0 var(--radius);
+  z-index: 20;
+  pointer-events: none;
+}
 
 /* 책 본체 */
 .book {
