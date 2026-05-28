@@ -5,7 +5,10 @@
     "tagline": "AI가 그리고 쓴 동화책 모음",
     "books": [
       { "slug": "01-moonlight-library", "title": "달빛 도서관과 보리", "subtitle": "잠 못 드는 밤, 책 한 권이 날아왔어요", "cover": "books/01-moonlight-library/images/cover.png", "pages": 10, "style": "수채화", "tags": ["우정", "상상", "잠자리"], "url": "books/01-moonlight-library/", "added": "2026-05-22" },
-      { "slug": "02-acorn-village-rescue", "title": "도토리 마을 구출 작전", "subtitle": "사라진 도토리 시계와 다섯 친구의 모험", "cover": "books/02-acorn-village-rescue/images/cover.png", "pages": 32, "style": "doodle", "tags": ["모험", "동물", "협동"], "url": "books/02-acorn-village-rescue/", "added": "2026-05-22" }
+      { "slug": "02-acorn-village-rescue", "title": "도토리 마을 구출 작전", "subtitle": "사라진 도토리 시계와 다섯 친구의 모험", "cover": "books/02-acorn-village-rescue/images/cover.png", "pages": 32, "style": "doodle", "tags": ["모험", "동물", "협동"], "url": "books/02-acorn-village-rescue/", "added": "2026-05-22" },
+      { "slug": "03-soi-ai-world", "title": "소이의 반짝이는 하루", "subtitle": "AI 세상에서도 가장 따뜻한 건 엄마 아빠 품이에요", "cover": "books/03-soi-ai-world/images/cover.png", "pages": 10, "style": "watercolor", "tags": ["가족", "AI", "따뜻함"], "url": "books/03-soi-ai-world/", "added": "2026-05-26" },
+      { "slug": "04-yeonwoo-rapunzel", "title": "연우의 마법 머리카락", "subtitle": "불러줘, 연우야! 머리카락을 내려줘!", "cover": "books/04-yeonwoo-rapunzel/images/cover.png", "pages": 10, "style": "watercolor", "tags": ["우정", "모험", "마법"], "url": "books/04-yeonwoo-rapunzel/", "added": "2026-05-27" },
+      { "slug": "05-three-little-pigs", "title": "수연, 연우, 연아의 집 짓기 대소동", "subtitle": "열심히 지은 집이 최고야!", "cover": "books/05-three-little-pigs/images/cover.png", "pages": 10, "style": "watercolor", "tags": ["용기", "노력", "자매"], "url": "books/05-three-little-pigs/", "added": "2026-05-28" }
     ]
   };
 

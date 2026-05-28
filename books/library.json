@@ -45,6 +45,17 @@
       "tags": ["우정", "모험", "마법"],
       "url": "books/04-yeonwoo-rapunzel/",
       "added": "2026-05-27"
+    },
+    {
+      "slug": "05-three-little-pigs",
+      "title": "수연, 연우, 연아의 집 짓기 대소동",
+      "subtitle": "열심히 지은 집이 최고야!",
+      "cover": "books/05-three-little-pigs/images/cover.png",
+      "pages": 10,
+      "style": "watercolor",
+      "tags": ["용기", "노력", "자매"],
+      "url": "books/05-three-little-pigs/",
+      "added": "2026-05-28"
     }
   ]
 }
