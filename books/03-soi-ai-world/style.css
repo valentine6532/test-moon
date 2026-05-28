@@ -203,10 +203,11 @@ html, body {
 }
 .scene-img {
   position: relative;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #120d28;
+  transform-origin: center center;
 }
 .scene-img::after {
   content: "";
@@ -407,4 +408,130 @@ html, body {
   color: var(--ink-soft);
   font-family: var(--sans); font-size: 14px;
   background: linear-gradient(135deg, #1a1230 0%, #120d28 100%);
+}
+
+/* ============================================================
+   이미지 애니메이션 — Ken Burns · 시머 · 스파클
+   ============================================================ */
+
+/* Ken Burns 공통: active 아닐 때 정지 */
+.scene-img {
+  animation: kb-a 12s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+.page.active .scene-img {
+  animation-play-state: running;
+}
+
+/* 8장면에 4가지 패턴 순환 */
+.page-track > article:nth-child(2) .scene-img { animation-name: kb-a; }
+.page-track > article:nth-child(3) .scene-img { animation-name: kb-b; }
+.page-track > article:nth-child(4) .scene-img { animation-name: kb-c; }
+.page-track > article:nth-child(5) .scene-img { animation-name: kb-d; }
+.page-track > article:nth-child(6) .scene-img { animation-name: kb-a; animation-delay: -3s; }
+.page-track > article:nth-child(7) .scene-img { animation-name: kb-b; animation-delay: -3s; }
+.page-track > article:nth-child(8) .scene-img { animation-name: kb-c; animation-delay: -3s; }
+.page-track > article:nth-child(9) .scene-img { animation-name: kb-d; animation-delay: -3s; }
+
+@keyframes kb-a {
+  0%   { transform: scale(1.00) translate(0%,    0%);    }
+  100% { transform: scale(1.12) translate(2.5%,  2%);    }
+}
+@keyframes kb-b {
+  0%   { transform: scale(1.08) translate(-2%,   1%);    }
+  100% { transform: scale(1.00) translate(0%,    0%);    }
+}
+@keyframes kb-c {
+  0%   { transform: scale(1.00) translate(0%,    2%);    }
+  100% { transform: scale(1.10) translate(-2%,  -1.5%);  }
+}
+@keyframes kb-d {
+  0%   { transform: scale(1.06) translate(1.5%, -2%);    }
+  100% { transform: scale(1.14) translate(-1%,   1.5%);  }
+}
+
+/* 표지 숨결(breathe) 효과 */
+.cover-img {
+  animation: cover-breathe 10s ease-in-out infinite;
+}
+@keyframes cover-breathe {
+  0%, 100% { transform: scale(1.00); background-position: 50% 50%; }
+  50%       { transform: scale(1.07); background-position: 52% 52%; }
+}
+
+/* 시머(shimmer) — 대각선 빛띠 스윕 */
+.img-shimmer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+.img-shimmer::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -60%;
+  width: 40%;
+  height: 140%;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.08)  48%,
+    rgba(255, 255, 255, 0.16)  50%,
+    rgba(255, 255, 255, 0.08)  52%,
+    transparent 70%
+  );
+  animation: shimmer-sweep 7s ease-in-out infinite;
+  animation-play-state: paused;
+}
+.page.active .img-shimmer::before {
+  animation-play-state: running;
+}
+@keyframes shimmer-sweep {
+  0%   { transform: translateX(0);    opacity: 0; }
+  8%   { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { transform: translateX(360%); opacity: 0; }
+}
+
+/* 스파클(sparkle) — 별빛 부유 */
+.img-sparkle {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+.img-sparkle::before,
+.img-sparkle::after {
+  content: "✦";
+  position: absolute;
+  color: rgba(249, 200, 74, 0.80);
+  text-shadow:
+    0 0  6px rgba(249, 200, 74, 0.75),
+    0 0 14px rgba(249, 200, 74, 0.40);
+  animation: sparkle-float 5s ease-in-out infinite;
+  animation-play-state: paused;
+}
+.img-sparkle::before {
+  left: 18%; top: 62%;
+  font-size: 15px;
+  animation-duration: 5s;
+  animation-delay: 0s;
+}
+.img-sparkle::after {
+  left: 72%; top: 30%;
+  font-size: 21px;
+  animation-duration: 6.5s;
+  animation-delay: 2.2s;
+}
+.page.active .img-sparkle::before,
+.page.active .img-sparkle::after {
+  animation-play-state: running;
+}
+@keyframes sparkle-float {
+  0%   { transform: translateY(0)     scale(0.4); opacity: 0;    }
+  18%  { transform: translateY(-6px)  scale(1.0); opacity: 1;    }
+  75%  { transform: translateY(-22px) scale(0.85); opacity: 0.75; }
+  100% { transform: translateY(-38px) scale(0.5); opacity: 0;    }
 }

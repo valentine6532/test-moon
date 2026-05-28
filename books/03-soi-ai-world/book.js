@@ -69,7 +69,10 @@
         `;
       } else if (p.type === 'scene') {
         el.innerHTML = `
-          <div class="scene-img" role="img" aria-label="장면 ${p.number}: ${escapeHtml(p.title)}" style="background-image:url('${p.image}')"></div>
+          <div class="scene-img" role="img" aria-label="장면 ${p.number}: ${escapeHtml(p.title)}" style="background-image:url('${p.image}')">
+            <span class="img-shimmer" aria-hidden="true"></span>
+            <span class="img-sparkle" aria-hidden="true"></span>
+          </div>
           <div class="scene-text">
             <div class="scene-num">SCENE · ${String(p.number).padStart(2,'0')}</div>
             <h2 class="scene-title">${escapeHtml(p.title)}</h2>
