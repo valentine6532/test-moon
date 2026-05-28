@@ -425,17 +425,18 @@ html, body {
   z-index: 0;
 }
 
-/* 패럴랙스 — 전경 레이어 (선명 · 빠르게) */
+/* 패럴랙스 — 전경 레이어 (선명 · 빠르게 · 인물만) */
 .parallax-mid {
   position: absolute;
   inset: -6%;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: center bottom;
   background-repeat: no-repeat;
   transform: translate3d(0, 0, 0);
   transition: transform 0.10s cubic-bezier(.22,.61,.36,1);
   will-change: transform;
   z-index: 1;
+  mix-blend-mode: multiply;   /* 흰 배경 → 투명하게 합성 */
 }
 
 /* 표지 숨결(breathe) 효과 */

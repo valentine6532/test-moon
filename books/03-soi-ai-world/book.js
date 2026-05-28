@@ -68,10 +68,17 @@
           </div>
         `;
       } else if (p.type === 'scene') {
+        // bg/char 레이어 분리 이미지가 있으면 사용, 없으면 원본 fallback
+        const bgImg  = p.image.replace(/(\.\w+)$/, '_bg$1');
+        const charImg = p.image.replace(/(\.\w+)$/, '_char$1');
         el.innerHTML = `
           <div class="scene-img" role="img" aria-label="장면 ${p.number}: ${escapeHtml(p.title)}">
-            <div class="parallax-bg" style="background-image:url('${p.image}')"></div>
-            <div class="parallax-mid" style="background-image:url('${p.image}')"></div>
+            <div class="parallax-bg"
+                 style="background-image:url('${bgImg}'),url('${p.image}')"
+                 data-bg="${bgImg}" data-fallback="${p.image}"></div>
+            <div class="parallax-mid"
+                 style="background-image:url('${charImg}')"
+                 data-char="${charImg}"></div>
             <span class="img-shimmer" aria-hidden="true"></span>
             <span class="img-sparkle" aria-hidden="true"></span>
           </div>
