@@ -69,7 +69,9 @@
         `;
       } else if (p.type === 'scene') {
         el.innerHTML = `
-          <div class="scene-img" role="img" aria-label="장면 ${p.number}: ${escapeHtml(p.title)}" style="background-image:url('${p.image}')">
+          <div class="scene-img" role="img" aria-label="장면 ${p.number}: ${escapeHtml(p.title)}">
+            <div class="parallax-bg" style="background-image:url('${p.image}')"></div>
+            <div class="parallax-mid" style="background-image:url('${p.image}')"></div>
             <span class="img-shimmer" aria-hidden="true"></span>
             <span class="img-sparkle" aria-hidden="true"></span>
           </div>
@@ -220,6 +222,61 @@
     });
   }
 
+  function initParallax() {
+    let idleAngle = 0;
+    let lastInteract = 0;
+
+    function applyParallax(nx, ny) { // nx, ny: -1..1 relative to center
+      const activePage = document.querySelector('.page.active');
+      if (!activePage) return;
+      activePage.querySelectorAll('.parallax-bg').forEach(el => {
+        el.style.transform = `translate3d(${nx * 10}px, ${ny * 8}px, 0)`;
+      });
+      activePage.querySelectorAll('.parallax-mid').forEach(el => {
+        el.style.transform = `translate3d(${nx * 24}px, ${ny * 18}px, 0)`;
+      });
+    }
+
+    // 마우스
+    bookEl.addEventListener('mousemove', (e) => {
+      lastInteract = Date.now();
+      const rect = bookEl.getBoundingClientRect();
+      const nx = ((e.clientX - rect.left) / rect.width  - 0.5) * 2;
+      const ny = ((e.clientY - rect.top)  / rect.height - 0.5) * 2;
+      applyParallax(nx, ny);
+    });
+
+    // 터치 드래그
+    bookEl.addEventListener('touchmove', (e) => {
+      lastInteract = Date.now();
+      const t = e.touches[0];
+      const rect = bookEl.getBoundingClientRect();
+      const nx = ((t.clientX - rect.left) / rect.width  - 0.5) * 2;
+      const ny = ((t.clientY - rect.top)  / rect.height - 0.5) * 2;
+      applyParallax(nx, ny);
+    }, { passive: true });
+
+    // 기기 기울기 (모바일)
+    window.addEventListener('deviceorientation', (e) => {
+      lastInteract = Date.now();
+      const nx = Math.max(-1, Math.min(1, (e.gamma || 0) / 25));
+      const ny = Math.max(-1, Math.min(1, ((e.beta  || 0) - 30) / 25));
+      applyParallax(nx, ny);
+    });
+
+    // 유휴 상태 — 2초 미조작 시 부드럽게 유영
+    (function tick() {
+      if (Date.now() - lastInteract > 2000) {
+        idleAngle += 0.007;
+        applyParallax(
+          Math.sin(idleAngle)       * 0.35,
+          Math.sin(idleAngle * 0.6 + 1) * 0.25
+        );
+      }
+      requestAnimationFrame(tick);
+    })();
+  }
+
   async function init() {
     data = await loadData();
     document.title = data.title;
@@ -227,6 +284,7 @@
     bindEvents();
     render();
     preloadImages();
+    initParallax();
     bookEl.focus();
   }
 
