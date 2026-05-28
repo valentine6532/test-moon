@@ -101,6 +101,8 @@ html, body {
   color: var(--ink-soft);
   width: 38px; height: 38px; border-radius: 50%;
   cursor: pointer; font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0; line-height: 1;
   transition: all 0.2s var(--transition);
 }
 .ghost-btn:hover { background: rgba(255, 255, 255, 0.08); color: var(--ink); border-color: rgba(255, 255, 255, 0.35); }
