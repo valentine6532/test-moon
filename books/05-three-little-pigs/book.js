@@ -89,10 +89,13 @@
     const btn = document.getElementById('auto-btn');
     const picker = document.getElementById('delay-picker');
     if (!btn || !picker) return;
+    // 아이콘: ▶ 꺼짐 / ⏸ 켜짐
+    btn.textContent = isAutoTurn ? '⏸' : '▶';
     if (isAutoTurn) {
       btn.classList.add('active-gold');
       btn.title = '자동 넘김 끄기';
-      picker.classList.add('visible');
+      // 딜레이 선택은 음소거일 때만 표시
+      picker.classList.toggle('visible', isMuted);
     } else {
       btn.classList.remove('active-gold');
       btn.title = '자동 넘김 켜기';
@@ -275,7 +278,7 @@
         isMuted = !isMuted;
         audioEl.muted = isMuted;
         updateMuteBtn();
-        // 음소거 전환 시 자동넘김 재스케줄
+        updateAutoBtn(); // 음소거 전환 시 딜레이 피커 표시/숨김 갱신
         scheduleAutoTurn();
       });
     }
